@@ -1,0 +1,21 @@
+@use '../../colors/colors';
+
+.MuiDrawer-paperAnchorRight {
+  background-color: white;
+  width: 480px;
+  padding: 20px;
+  
+  .closeX {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .inner {
+    background-color: colors.$background-purp;
+    border-radius: 8px;
+    border: 1px solid colors.$cav-blu;
+    height: calc(100vh - 20px);
+    margin-bottom: 40px;
+  }
+}
