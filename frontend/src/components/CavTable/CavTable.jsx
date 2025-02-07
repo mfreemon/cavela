@@ -25,7 +25,7 @@
 // const CavTable = () => {
 //   return (
 //     <TableContainer component={Paper}>
-//       <Table sx={{ minWidth: 650 }} aria-label="simple table">
+//       <Table sx={{ minWidth: 650,  }} aria-label="simple table">
 //         <TableHead>
 //           <TableRow>
 //             <TableCell></TableCell>
@@ -48,8 +48,8 @@
 //               <TableCell component="th" scope="row">
 //                 {row.name}
 //               </TableCell>
-//               <TableCell align="right">{row.calories}</TableCell>
-//               <TableCell align="right">{row.fat}</TableCell>
+//               <TableCell sx={{ borderBottom: "none" }} align="right">{row.calories}</TableCell>
+//               <TableCell sx={{ borderBottom: "none" }} align="right">{row.fat}</TableCell>
 //               <TableCell align="right">{row.carbs}</TableCell>
 //               <TableCell align="right">{row.protein}</TableCell>
 //               <TableCell align="right">{row.calories}</TableCell>
@@ -65,7 +65,10 @@
 // }  
 
 // export default CavTable;
+
 import InfoIcon from '@mui/icons-material/Info';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import StarIcon from '@mui/icons-material/Star';
 import './table.scss';
 
 const rows = [
@@ -102,9 +105,9 @@ const CavTable = () => {
               <td>{row.fat}</td>
               <td>{row.carbs}</td>
               <td>{row.protein}</td>
-              <td>{row.calories}</td>
+              <td className='rating'>{row.calories}<StarIcon/></td>
               <td ><span className='review'>{row.fat}</span></td>
-              <td>{row.carbs}</td>
+              <td className='files'>{row.carbs}<InsertDriveFileIcon/></td>
               <td>{row.protein}</td>
             </tr>
           ))}
