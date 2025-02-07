@@ -1,10 +1,21 @@
 .dashboard {
   max-width: 1200px;
-  margin: 0 auto
+  margin: 0 auto;
+
+  h1 {
+    padding: 20px 0 30px 0;
+  }
+  h2 {
+    padding-bottom: 12px;
+  }
 }
+
 .dashboard-block {
   background-color: white;
   max-width: 1200px;
   height: 500px;
-  border-radius: 3px solid blue;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 4px 0px;
+
 }
+

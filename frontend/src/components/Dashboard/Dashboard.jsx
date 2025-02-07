@@ -1,5 +1,7 @@
 import React, {useState } from "react";
 import DrawerRight from "../Drawer/DrawerRight";
+import DashBlock from "../DashBlock/Dashblock";
+import CavTable from "../CavTable/CavTable";
 import './dashboard.scss';
 
 
@@ -9,9 +11,12 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <DrawerRight openDrawer={drawerOpen} closeDrawer={() => setOpenDrawer(false)} />
-      <h1>This is the Dashboard</h1>
+      <h1>Select Suppliers</h1>
+      <h2>Quotes{3}</h2>
+      <DashBlock>
+        <CavTable/>
+      </DashBlock>
       <button className="btn" onClick={() => setOpenDrawer(true)}>Open Drawer</button>
-      <div className="dashboard-block">asxasxå</div>
     </div>
   )
 }
