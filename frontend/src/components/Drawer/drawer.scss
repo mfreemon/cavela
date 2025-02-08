@@ -10,6 +10,10 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
+
+    svg {
+      cursor: pointer;
+    }
   }
   .inner {
     background-color: colors.$background-purp;

@@ -9,6 +9,7 @@ import quotes from '../../assets/quotes.json'
 const Dashboard = () => {
   const [drawerOpen, setOpenDrawer] = useState(false);
   const [quoteData, setQuoteData] = useState([]);
+  const [supplierData, setSupplier] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,14 +21,25 @@ const Dashboard = () => {
     fetchData();
   },[])
 
+  const handleSupplier = (ven, id) => {
+    console.log(ven, id);
+    const findItem = ven.product_quotes.find(item => item.id == id);
+    setSupplier({supplier: ven, item: findItem});
+  }
+
+  console.log(supplierData)
   return (
     <div className="dashboard">
-      <DrawerRight openDrawer={true} closeDrawer={() => setOpenDrawer(false)} />
+      <DrawerRight 
+        openDrawer={drawerOpen} 
+        closeDrawer={() => setOpenDrawer(false)}
+        drawerData={supplierData} 
+      />
       <h1>Select Suppliers</h1>
       <h2>Quotes{3}</h2>
       <DashBlock>
         {quoteData.length > 1 && (
-          <CavTable data={quoteData}/>
+          <CavTable data={quoteData} selectSupplier={handleSupplier}/>
         )}  
       </DashBlock>
       <button className="btn" onClick={() => setOpenDrawer(true)}>Open Drawer</button>
