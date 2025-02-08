@@ -14,7 +14,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await new Promise((resolve) => setTimeout(() => resolve(quotes), 2000)); // Simulate network delay
-      console.log(response)
       setQuoteData(response)
     };
 
@@ -22,7 +21,6 @@ const Dashboard = () => {
   },[])
 
   const handleSupplier = (ven, id) => {
-    console.log(ven, id);
     const findItem = ven.product_quotes.find(item => item.id == id);
     setSupplier({supplier: ven, item: findItem});
   }

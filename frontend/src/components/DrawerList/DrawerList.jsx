@@ -4,6 +4,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InfoIcon from '@mui/icons-material/Info';
+import StarIcon from '@mui/icons-material/Star';
 
 import './drawerlist.scss';
 
@@ -14,7 +15,6 @@ const style = {
 };
 
 const DrawerList = ({data})  => {
-  console.log(data)
   return (
     <div className="drawer-list">
       <List sx={style}>
@@ -81,7 +81,7 @@ const DrawerList = ({data})  => {
         <h3>Supplier Details</h3>
         <ListItem>
           <span>Ratings<InfoIcon/></span>
-          <span>{data.supplier.supplier.average_score}</span>
+          <span className='rating'>{data.supplier.supplier.average_score}<StarIcon /></span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>

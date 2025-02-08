@@ -9,7 +9,7 @@ const columnNames = ["", 'VARIANT', 'UNIT PRICE', 'QUANTITY', 'PRODUCTION TIME',
 const CavTable = ({data, selectSupplier}) => {
   return (
     <div>
-      <table className="table">
+      <table className="table" cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
             {columnNames.map((col, i) => (
@@ -17,7 +17,7 @@ const CavTable = ({data, selectSupplier}) => {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {data.map((supplierData, index) => (
             supplierData.product_quotes.map((quote, q) => (
             <tr key={index} onClick={() => selectSupplier(supplierData, quote.id)}>

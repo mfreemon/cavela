@@ -5,7 +5,6 @@ import DrawerList from "../DrawerList/DrawerList";
 import './drawer.scss';
 
 const DrawerRight = ({ closeDrawer, openDrawer, drawerData }) => {
-  console.log(drawerData)
   return (
     <Drawer className="drawer" anchor="right" open={openDrawer}>
       <div className="closeX">
