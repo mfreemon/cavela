@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <DrawerRight openDrawer={drawerOpen} closeDrawer={() => setOpenDrawer(false)} />
+      <DrawerRight openDrawer={true} closeDrawer={() => setOpenDrawer(false)} />
       <h1>Select Suppliers</h1>
       <h2>Quotes{3}</h2>
       <DashBlock>

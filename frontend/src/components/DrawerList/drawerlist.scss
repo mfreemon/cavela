@@ -1,0 +1,22 @@
+@use '../../colors/colors';
+
+.drawer-list {
+  ul {
+    margin-bottom: 10px;
+  }
+  li {
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  li > span:nth-child(1) {
+    min-width: 120px;
+    color: colors.$grey-text;
+  }
+  
+  li > span:nth-child(2) {
+    color: black;
+  }
+}

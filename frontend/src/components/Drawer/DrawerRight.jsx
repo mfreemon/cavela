@@ -1,6 +1,7 @@
 import React from "react";
 import {Drawer, IconButton} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import DrawerList from "../DrawerList/DrawerList";
 import './drawer.scss';
 
 const DrawerRight = ({ closeDrawer, openDrawer }) => {
@@ -10,14 +11,8 @@ const DrawerRight = ({ closeDrawer, openDrawer }) => {
         <p className="base-text">Supplier1</p>
         <CloseIcon onClick={closeDrawer}/>
       </div> 
-      <div className="inner">
-        <h1>comsthing</h1>
-        <h1>comsthing</h1>
-        <h1>comsthing</h1>
-        <h1>comsthing</h1> 
-      </div> 
+      <DrawerList/>
     </Drawer>
-  
   )
 }
 

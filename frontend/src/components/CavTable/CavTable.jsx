@@ -86,7 +86,7 @@ const rows = [
 
 const columnNames = ["", 'VARIANT', 'UNIT PRICE', 'QUANTITY', 'PRODUCTION TIME', 'RATINGS', 'REVIEW', 'FILES', 'STATUS']
 
-const CavTable = () => {
+const CavTable = ({data}) => {
   return (
     <div>
       <table className="table">
@@ -98,18 +98,20 @@ const CavTable = () => {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, index) => (
+          {data.map((supplierData, index) => (
+            supplierData.product_quotes.map((quote, qIndex) => (
             <tr key={index}>
-              <td className='supplier'>{row.name}</td>
-              <td>{row.calories}</td>
-              <td>{row.fat}</td>
-              <td>{row.carbs}</td>
-              <td>{row.protein}</td>
-              <td className='rating'>{row.calories}<StarIcon/></td>
-              <td ><span className='review'>{row.fat}</span></td>
-              <td className='files'>{row.carbs}<InsertDriveFileIcon/></td>
-              <td>{row.protein}</td>
+              <td className='supplier'>{supplierData.supplier.supplier_cloak}</td>
+              <td>{quote.product_name}</td>
+              <td>{quote.exw_unit_price_marked_up}</td>
+              <td>{quote.quantity}</td>
+              <td>{quote.production_time_days} Days</td>
+              <td className='rating'>{supplierData.supplier.average_score}<StarIcon/></td>
+              <td ><span className='review'>Best Value</span></td>
+              <td className='files'>{quote.files.length}<InsertDriveFileIcon/></td>
+              <td>Not Purchased</td>
             </tr>
+            ))
           ))}
         </tbody>
       </table>
@@ -118,3 +120,5 @@ const CavTable = () => {
 };
 
 export default CavTable;
+
+
