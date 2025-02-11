@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DrawerRight from "../Drawer/DrawerRight";
 import DashBlock from "../DashBlock/Dashblock";
 import CavTable from "../CavTable/CavTable";
+import ProgressInfo from "../ProgressInfo/ProgressInfo";
 import './dashboard.scss';
 
 import quotes from '../../assets/quotes.json'
@@ -10,10 +11,12 @@ const Dashboard = () => {
   const [drawerOpen, setOpenDrawer] = useState(false);
   const [quoteData, setQuoteData] = useState([]);
   const [supplierData, setSupplier] = useState({});
+  const [goToNext, setGotoNext] = useState(false);
+  const [quoteInfo, setQuoteInfo] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await new Promise((resolve) => setTimeout(() => resolve(quotes), 2000)); // Simulate network delay
+      const response = await new Promise((resolve) => setTimeout(() => resolve(quotes), 500)); // Simulate network delay
       setQuoteData(response)
     };
 
@@ -25,22 +28,24 @@ const Dashboard = () => {
     setSupplier({supplier: ven, item: findItem});
   }
 
-  console.log(supplierData)
   return (
     <div className="dashboard">
       <DrawerRight 
         openDrawer={drawerOpen} 
         closeDrawer={() => setOpenDrawer(false)}
-        drawerData={supplierData} 
+        drawerData={supplierData}
+        setNext={setGotoNext} 
       />
       <h1>Select Suppliers</h1>
       <h2>Quotes{3}</h2>
       <DashBlock>
         {quoteData.length > 1 && (
-          <CavTable data={quoteData} selectSupplier={handleSupplier}/>
+          <CavTable data={quoteData} selectSupplier={handleSupplier} open={setOpenDrawer}/>
         )}  
       </DashBlock>
-      <button className="btn" onClick={() => setOpenDrawer(true)}>Open Drawer</button>
+      <DashBlock>
+        <ProgressInfo next={goToNext} />
+      </DashBlock>
     </div>
   )
 }

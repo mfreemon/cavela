@@ -4,7 +4,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import InfoIcon from '@mui/icons-material/Info';
+import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import StarIcon from '@mui/icons-material/Star';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import Star1 from '../../assets/star1.svg';
+import Star2 from '../../assets/star2.svg';
+
 
 import './drawerlist.scss';
 
@@ -14,42 +19,85 @@ const style = {
   borderColor: 'divider',
 };
 
+const FilesList = ({files}) => {
+  if(files.length >=1){
+    return (
+      files.map((file, indesx) => (
+        <div className='file-info'>
+          <div><InsertDriveFileIcon></InsertDriveFileIcon></div>
+          <div>
+            <span> {file.name}</span>
+            <span>{file.description}</span>
+          </div>
+        </div>
+      ))
+    )
+  } else {
+    return (
+      <span>N/A</span>
+    )
+  }  
+}
+
 const DrawerList = ({data})  => {
+  console.log(data)
+  const {
+    product_name, 
+    exw_unit_price_marked_up, 
+    ddp_unit_price_marked_up,
+    production_time_days, 
+    quantity,
+    shipping_time_days,
+    sample_cost_marked_up,
+    sample_shipping_cost_marked_up,
+    sample_production_time_days
+  } = data.item
   return (
-    <div className="drawer-list">
+    <div className={`drawer-list ${data.supplier?.recommended ? 'rec': 'non-rec'}`}>
+      {data.supplier.recommended && <span className='rec-tag'><img src={Star1}/><img src={Star2}/>Cavella Recommended</span>}
+      <List sx={style}>
+        <ListItem>
+          <span>Status</span>
+          <span className='circle'><PanoramaFishEyeIcon/>Not Purchased</span>
+        </ListItem>
+      </List>  
       <List sx={style}>
         <h3>Product</h3>
         <ListItem>
           <span>Variant<InfoIcon/></span>
-          <span>{data.item.product_name}</span>
+          <span>{product_name}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>EXW UNit Price<InfoIcon/></span>
-          <span>${data.item.exw_unit_price_marked_up}</span>
+          <span>${exw_unit_price_marked_up}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>DDP Unit Price<InfoIcon/></span>
-          <span>From ${data.item.ddp_unit_price_marked_up}</span>
+          <span>From ${ddp_unit_price_marked_up}</span>
         </ListItem>
+        <Divider variant="middle" component="li" />
         <ListItem>
           <span>Quantity</span>
-          <span>{data.item.quantity}</span>
+          <span>{quantity}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>Production Time<InfoIcon/></span>
-          <span>{data.item.production_time_days} Days</span>
+          <span>{production_time_days} Days</span>
         </ListItem>
+        <Divider variant="middle" component="li" />
         <ListItem>
           <span>Shipping Time<InfoIcon/></span>
-          <span>{data.item.shipping_time_days} Days</span>
+          <span>{shipping_time_days} Days</span>
         </ListItem>
+        <Divider variant="middle" component="li" />
         <ListItem>
           <span>Method<InfoIcon/></span>
           <span>Air</span>
         </ListItem>
+        <Divider variant="middle" component="li" />
         <ListItem>
           <span>Payment Terms</span>
           <span>50% upfront, %50 after reception</span>
@@ -59,12 +107,12 @@ const DrawerList = ({data})  => {
         <h3>Sample</h3>
         <ListItem>
           <span>Sample Cost<InfoIcon/></span>
-          <span>{data.item.sample_cost_marked_up}</span>
+          <span>{sample_cost_marked_up}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>Shipping Cost<InfoIcon/></span>
-          <span>{data.item.sample_shipping_cost_marked_up}</span>
+          <span>{sample_shipping_cost_marked_up}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
@@ -73,8 +121,8 @@ const DrawerList = ({data})  => {
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
-          <span>Shipping Timet</span>
-          <span>{data.item.sample_production_time_days}</span>        
+          <span>Shipping Time</span>
+          <span>{sample_production_time_days} Days</span>        
         </ListItem>
       </List>
       <List sx={style}>
@@ -84,14 +132,20 @@ const DrawerList = ({data})  => {
           <span className='rating'>{data.supplier.supplier.average_score}<StarIcon /></span>
         </ListItem>
         <Divider variant="middle" component="li" />
-        <ListItem>
+        <ListItem className="review-container">
           <span>Review<InfoIcon/></span>
-          <span>N/A</span>
+            {data.supplier?.recommended ?
+              <span className='review'>
+                <span>Best Value</span>
+                <span>Fastest</span>
+              </span>        
+                :
+              <span>N/A</span>}
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>Notes</span>
-          <span></span>
+          <span>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
         </ListItem>
         <Divider variant="middle" component="li" />
        </List>
@@ -99,7 +153,7 @@ const DrawerList = ({data})  => {
         <h3>References</h3> 
         <ListItem>
           <span>Files</span>
-          <span></span>        
+          <FilesList files={data?.item?.files} />    
         </ListItem>
         <Divider variant="middle" component="li" />
       </List>

@@ -1,0 +1,72 @@
+@use '../../colors/colors';
+
+.progress {
+  display: flex;
+  flex-direction: column;
+
+  .divider {
+    width: 2px;
+    height: 16px;
+    background-color: colors.$cav-blu;
+    margin: 7px 20px;
+    opacity: 0.25;
+  }
+
+  a {
+    color: colors.$cav-blu;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, .5);
+    backdrop-filter: blur(10px);
+    opacity: .25;
+
+    &.first-step {
+      opacity: 1;
+    }
+ 
+    span {
+      display: block;
+      line-height: 20px;
+    }
+
+    div > span:nth-child(1){
+      color: black;
+      font-size: 16px;
+    }
+
+    div > span:nth-child(2){
+      color: colors.$grey-text;
+      font-size: 16px;
+    }
+  }
+
+  .next-step {
+    animation:fade 3s forwards;
+  }
+
+  .symbol {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    line-height: 70px;
+    background-color: colors.$cav-blu;
+    border-radius: 8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    svg {
+      width: 16px;
+      fill: white
+    }
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}

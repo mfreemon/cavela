@@ -1,9 +1,38 @@
 @use '../../colors/colors';
 
 .drawer-list {
+  &.rec {
+    background: colors.$background-purp;
+    padding: 0 10px;
+    border: 1px solid colors.$cav-blu;
+    border-radius: 8px;
+  }
+
+  .rec-tag {
+    color: white;
+    background-color: colors.$cav-blu;
+    border-radius: 8px 0px 8px 0px;
+    margin-left: -11px;
+    display: block;
+    width: 205px;
+    padding-left: 5px;
+    font-size: 16px;
+    font-family: "Schibsted Grotesk", serif !important;
+    font-weight: 700;
+  }
+  
+  .circle {
+    svg {
+      width: 16px;
+      fill: colors.$grey-text;
+      margin-right: 5px;
+    }   
+  }
+  
   ul {
     margin-bottom: 10px;
   }
+
   li {
     font-size: 14px;
     font-weight: 500;
@@ -19,17 +48,62 @@
     }
   }
   li > span:nth-child(1) {
+    width: 130px;
     min-width: 120px;
     color: colors.$grey-text;
+    margin-right: 10px;
   }
   
   li > span:nth-child(2) {
     color: black;
   }
-  
+
   .rating {
     svg {
       fill: colors.$cav-yellow;   
+    }
+  }
+
+  .review {
+    span {
+      font-size: 11px;
+      line-height: 16;
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    span:nth-child(1){
+      background-color: colors.$button-purp;
+      color: colors.$cav-blu;
+      margin-right: 5px;
+    }
+    span:nth-child(2){
+      background-color: colors.$light-blue;
+      color: colors.$cav-teal;
+    }
+  }
+
+  .review-container {
+    height: 37px;
+  }
+
+  .file-info {
+    background-color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid colors.$border-grey;
+    display: flex;
+
+    div:nth-child(1){
+      margin-right: 5px;
+    }
+    span:nth-child(1){
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    svg {
+      fill: colors.$grey-text;
+      width: 16px;
     }
   }
 }
