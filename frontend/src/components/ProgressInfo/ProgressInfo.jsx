@@ -18,7 +18,7 @@ const ProgressInfo = ({next}) => {
       <div className={`info ${next ? 'next-step': null}`}>
         <div className='symbol'><SendIcon/></div>
         <div>
-          <span>Reaching out to suppliers</span>
+          <span>Reaching out to {next && (<a>212</a>)} suppliers</span>
           <span>We shared your product info with match suppliers to understand their interest.</span>
         </div>
       </div>
