@@ -21,3 +21,10 @@
 
 }
 
+@media only screen and (max-width: 480px){
+  .dashboard {
+    h1,h2 {
+      padding-left: 20px; 
+    }
+  }  
+}

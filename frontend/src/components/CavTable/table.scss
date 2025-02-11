@@ -162,4 +162,26 @@
   }     
 } 
 
+@media only screen and (max-width: 480px){
+  .hide {
+    display: none;
+  }
 
+  .table thead tr th:nth-child(2){        
+    margin-left: 140px;
+  }
+  .table thead tr th:nth-child(3){        
+    margin-left: 60px;
+  }
+  .table thead tr{
+    th:nth-child(4),
+    th:nth-child(5),
+    th:nth-child(6),
+    th:nth-child(7),
+    th:nth-child(8),
+    th:nth-child(9){
+      display: none;
+    }
+
+  }
+}  

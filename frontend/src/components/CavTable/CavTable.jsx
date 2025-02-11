@@ -15,12 +15,12 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                   <td className='supplier'>{supplierData.supplier.supplier_cloak}</td>
                   <td className='prod-name'>{truncateString(quote.product_name)}</td>
                   <td>{quote.exw_unit_price_marked_up}</td>
-                  <td>{quote.quantity}</td>
-                  <td>{quote.production_time_days} Days</td>
-                  <td className='rating'>{supplierData.supplier.average_score}<StarIcon /></td>
-                  <td><span className='review'>Best Value</span></td>
-                  <td className='files'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
-                  <td className='radio'><PanoramaFishEyeIcon/>Not Purchased</td>
+                  <td className='hide'>{quote.quantity}</td>
+                  <td className='hide'>{quote.production_time_days} Days</td>
+                  <td className='rating hide'>{supplierData.supplier.average_score}<StarIcon /></td>
+                  <td className='hide'><span className='review'>Best Value</span></td>
+                  <td className='files hide'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
+                  <td className='radio hide'><PanoramaFishEyeIcon/>Not Purchased</td>
                 </tr>
                 ))}
               </div>
@@ -34,12 +34,12 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                   <td className='supplier'>{supplierData.supplier.supplier_cloak}</td>
                   <td className='prod-name'>{truncateString(quote.product_name)}</td>
                   <td>{quote.exw_unit_price_marked_up}</td>
-                  <td>{quote.quantity}</td>
-                  <td>{quote.production_time_days} Days</td>
-                  <td className='rating'>{supplierData.supplier.average_score}<StarIcon /></td>
-                  <td><span className='review'>Best Value</span></td>
-                  <td className='files'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
-                  <td className='radio'><PanoramaFishEyeIcon/>Not Purchased</td>
+                  <td className='hide'>{quote.quantity}</td>
+                  <td className='hide'>{quote.production_time_days} Days</td>
+                  <td className='rating hide'>{supplierData.supplier.average_score}<StarIcon /></td>
+                  <td className='hide'><span className='review'>Best Value</span></td>
+                  <td className='files hide'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
+                  <td className='radio hide'><PanoramaFishEyeIcon/>Not Purchased</td>
                 </tr>
               ))}
             </div>
