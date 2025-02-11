@@ -62,7 +62,7 @@ import Star1 from '../../assets/star1.svg';
 import Star2 from '../../assets/star2.svg';
 import './table.scss';
 
-const columnNames = [ '', 'VARIANT', 'UNIT PRICE', 'QUANTITY', 'PRODUCTION TIME', 'RATINGS', 'REVIEW', 'FILES', 'STATUS']
+const columnNames = ['VARIANT', 'UNIT PRICE', 'QUANTITY', 'PRODUCTION TIME', 'RATINGS', 'REVIEW', 'FILES', 'STATUS']
 
 const CavTable = ({data, selectSupplier, open}) => {
   return (
@@ -71,7 +71,7 @@ const CavTable = ({data, selectSupplier, open}) => {
         <thead>
           <tr>
             {columnNames.map((col, i) => (
-              <th key={i}>{col}{i!== 0 ? <InfoIcon/> : null}</th>
+              <th key={i}>{col}{<InfoIcon/>}</th>
             ))}
           </tr>
         </thead>

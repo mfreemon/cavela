@@ -32,13 +32,19 @@ const Dashboard = () => {
     setSupplier({supplier: ven, item: findItem});
   }
 
+  const handleNext = (e) => {
+    setTimeout(() => {
+      setGotoNext(e)
+    }, 2000);
+  }
+
   return (
     <div className="dashboard">
       <DrawerRight 
         openDrawer={drawerOpen} 
         closeDrawer={() => setOpenDrawer(false)}
         drawerData={supplierData}
-        setNext={setGotoNext} 
+        setNext={handleNext} 
       />
       <h1>Select Suppliers</h1>
       <h2>Quotes ({quoteInfo?.stats?.surfaced_quotes})</h2>
