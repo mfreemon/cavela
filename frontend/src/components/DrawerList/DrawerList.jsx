@@ -106,12 +106,12 @@ const DrawerList = ({data})  => {
         <h3>Sample</h3>
         <ListItem>
           <span>Sample Cost<InfoIcon/></span>
-          <span>{sample_cost_marked_up}</span>
+          <span>${sample_cost_marked_up}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>Shipping Cost<InfoIcon/></span>
-          <span>{sample_shipping_cost_marked_up}</span>
+          <span>${sample_shipping_cost_marked_up}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
