@@ -37,7 +37,7 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                   <td className='hide'>{quote.quantity}</td>
                   <td className='hide'>{quote.production_time_days} Days</td>
                   <td className='rating hide'>{supplierData.supplier.average_score}<StarIcon /></td>
-                  <td className='hide'><span className='review'>Best Value</span></td>
+                  <td className='hide na'>N/A</td>
                   <td className='files hide'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
                   <td className='radio hide'><PanoramaFishEyeIcon/>Not Purchased</td>
                 </tr>
