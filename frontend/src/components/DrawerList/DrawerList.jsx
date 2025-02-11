@@ -40,6 +40,7 @@ const FilesList = ({files}) => {
 }
 
 const DrawerList = ({data})  => {
+  console.log(data)
   const {
     product_name, 
     exw_unit_price_marked_up, 
@@ -49,7 +50,8 @@ const DrawerList = ({data})  => {
     shipping_time_days,
     sample_cost_marked_up,
     sample_shipping_cost_marked_up,
-    sample_production_time_days
+    sample_production_time_days,
+    sample_shipping_time_days
   } = data.item
   return (
     <div className={`drawer-list ${data.supplier?.recommended ? 'rec': 'non-rec'}`}>
@@ -116,12 +118,12 @@ const DrawerList = ({data})  => {
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>Production Time</span>
-          <span>Denim</span>
+          <span>{sample_production_time_days}</span>
         </ListItem>
         <Divider variant="middle" component="li" />
         <ListItem>
           <span>Shipping Time</span>
-          <span>{sample_production_time_days} Days</span>        
+          <span>20 Days</span>        
         </ListItem>
       </List>
       <List sx={style}>
