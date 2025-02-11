@@ -59,6 +59,7 @@
       cursor: pointer;
       padding: 10px 0;
       font-size: 14px;
+      color: black;
 
 
       td:nth-child(2){
@@ -176,13 +177,18 @@
     display: none;
   }
 
+  .table thead tr {
+    margin-left: 130px;
+  }
+     
   .table thead tr th:nth-child(2){        
-    margin-left: 140px;
+    margin-left: 60px;
   }
   .table thead tr th:nth-child(3){        
     margin-left: 60px;
   }
   .table thead tr{
+    th:nth-child(3),
     th:nth-child(4),
     th:nth-child(5),
     th:nth-child(6),
