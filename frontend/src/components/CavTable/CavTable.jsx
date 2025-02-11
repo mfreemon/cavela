@@ -14,7 +14,7 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                 <tr className="rec" key={quote.id} onClick={() => {openDrawer(true) ,selectSupplier(supplierData, quote.id)}}>
                   <td className='supplier'>{supplierData.supplier.supplier_cloak}</td>
                   <td className='prod-name'>{truncateString(quote.product_name)}</td>
-                  <td>{quote.exw_unit_price_marked_up}</td>
+                  <td>${quote.exw_unit_price_marked_up}</td>
                   <td className='hide'>{quote.quantity}</td>
                   <td className='hide'>{quote.production_time_days} Days</td>
                   <td className='rating hide'>{supplierData.supplier.average_score}<StarIcon /></td>
@@ -33,7 +33,7 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                 <tr className="non-rec" key={quote.id} onClick={() => {openDrawer(true), selectSupplier(supplierData, quote.id)}}>
                   <td className='supplier'>{supplierData.supplier.supplier_cloak}</td>
                   <td className='prod-name'>{truncateString(quote.product_name)}</td>
-                  <td>{quote.exw_unit_price_marked_up}</td>
+                  <td>${quote.exw_unit_price_marked_up}</td>
                   <td className='hide'>{quote.quantity}</td>
                   <td className='hide'>{quote.production_time_days} Days</td>
                   <td className='rating hide'>{supplierData.supplier.average_score}<StarIcon /></td>
