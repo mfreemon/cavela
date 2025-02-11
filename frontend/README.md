@@ -11,6 +11,6 @@ Currently, two official plugins are available:
 ##Cavela Project
 
 ### Repo
-- after cloning the repo, just run the following command below in your terminal
+- After cloning the repo, just run the following commands below in your terminal
   - npm install
   - npm run dev
