@@ -20,7 +20,7 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                   <td className='rating'>{supplierData.supplier.average_score}<StarIcon /></td>
                   <td><span className='review'>Best Value</span></td>
                   <td className='files'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
-                  <td>Not Purchased</td>
+                  <td className='radio'><PanoramaFishEyeIcon/>Not Purchased</td>
                 </tr>
                 ))}
               </div>
@@ -39,7 +39,7 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
                   <td className='rating'>{supplierData.supplier.average_score}<StarIcon /></td>
                   <td><span className='review'>Best Value</span></td>
                   <td className='files'>{quote.files?.length || 0}<InsertDriveFileIcon /></td>
-                  <td>Not Purchased</td>
+                  <td className='radio'><PanoramaFishEyeIcon/>Not Purchased</td>
                 </tr>
               ))}
             </div>
@@ -56,6 +56,7 @@ const TableBody = ({ data, selectSupplier, openDrawer }) => {
 
 import InfoIcon from '@mui/icons-material/Info';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import StarIcon from '@mui/icons-material/Star';
 import Star1 from '../../assets/star1.svg';
 import Star2 from '../../assets/star2.svg';

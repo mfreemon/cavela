@@ -10,7 +10,7 @@ const DrawerRight = ({ closeDrawer, openDrawer, drawerData, setNext }) => {
   return (
     <Drawer className="drawer" anchor="right" open={openDrawer}>
       <div className="closeX">
-        <p className="base-text">{supplierName}</p>
+       <h3>{supplierName}</h3>
         <CloseIcon onClick={closeDrawer}/>
       </div>
       {drawerData && (

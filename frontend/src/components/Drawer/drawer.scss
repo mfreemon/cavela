@@ -5,6 +5,10 @@
   width: 480px;
   padding: 20px;
   
+  h3 {
+    font-family: "Poppins", serif;
+  }
+
   .closeX {
     display: flex;
     flex-direction: row;
@@ -49,6 +53,22 @@
     &.purchase {
       background: colors.$cav-blu;
       color: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .MuiDrawer-paperAnchorRight {
+    width: 350px;
+
+    .drawer-foot {
+      flex-direction: column;
+      align-items: center;
+      margin: 40px 0;
+
+      .close {
+        margin-bottom: 20px;
+      }
     }
   }
 }

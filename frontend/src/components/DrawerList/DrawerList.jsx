@@ -40,7 +40,6 @@ const FilesList = ({files}) => {
 }
 
 const DrawerList = ({data})  => {
-  console.log(data)
   const {
     product_name, 
     exw_unit_price_marked_up, 

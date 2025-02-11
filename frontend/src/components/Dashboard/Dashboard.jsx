@@ -5,7 +5,9 @@ import CavTable from "../CavTable/CavTable";
 import ProgressInfo from "../ProgressInfo/ProgressInfo";
 import './dashboard.scss';
 
-import quotes from '../../assets/quotes.json'
+import quotes from '../../assets/quotes.json';
+import quoting from '../../assets/quoting.json'
+
 
 const Dashboard = () => {
   const [drawerOpen, setOpenDrawer] = useState(false);
@@ -16,8 +18,10 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await new Promise((resolve) => setTimeout(() => resolve(quotes), 500)); // Simulate network delay
+      const response = await new Promise((resolve) => setTimeout(() => resolve(quotes), 500)); 
+      const quoteCount = await new Promise((resolve) => setTimeout(() => resolve(quoting), 500));
       setQuoteData(response)
+      setQuoteInfo(quoteCount)
     };
 
     fetchData();
@@ -37,7 +41,7 @@ const Dashboard = () => {
         setNext={setGotoNext} 
       />
       <h1>Select Suppliers</h1>
-      <h2>Quotes{3}</h2>
+      <h2>Quotes ({quoteInfo?.stats?.surfaced_quotes})</h2>
       <DashBlock>
         {quoteData.length > 1 && (
           <CavTable data={quoteData} selectSupplier={handleSupplier} open={setOpenDrawer}/>
