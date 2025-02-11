@@ -10,7 +10,7 @@ const ProgressInfo = ({next}) => {
       <div className='info first-step'>
         <div className='symbol'><PersonIcon/></div>
         <div>
-          <span>Identified <a>115</a> best matched out of 2,081,201 suppliers</span>
+          <span>Identified <a>115</a> best matched out of 2,081,201 suppliers.</span>
           <span>We searched for suppliers that match your exact product requirement and location.</span>
         </div>
       </div>
@@ -18,7 +18,7 @@ const ProgressInfo = ({next}) => {
       <div className={`info ${next ? 'next-step': null}`}>
         <div className='symbol'><SendIcon/></div>
         <div>
-          <span>Reaching out to {next && (<a>212</a>)} suppliers</span>
+          <span>Reaching out to {next && (<a>212</a>)} suppliers.</span>
           <span>We shared your product info with match suppliers to understand their interest.</span>
         </div>
       </div>
@@ -35,7 +35,7 @@ const ProgressInfo = ({next}) => {
         <div className='symbol'><AttachMoneyIcon/></div>
         <div>
           <span>Received Quotes</span>
-          <span>We received detailed qoutes that are ready for you to select</span>
+          <span>We received detailed qoutes that are ready for you to select.</span>
         </div>  
       </div>  
     </section>
