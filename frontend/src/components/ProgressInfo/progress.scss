@@ -70,3 +70,17 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 480px){
+
+  .progress {
+    .divider {
+      margin: 0 auto;
+      height: 38px;
+      padding: 10px 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 3px;
+    }
+  }
+}    
