@@ -16,6 +16,7 @@
   padding: 20px;
   max-width: 1200px;
   height: 400px;
+  overflow: auto;
   border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 4px 0px;
 
@@ -26,5 +27,5 @@
     h1,h2 {
       padding-left: 20px; 
     }
-  }  
+  } 
 }
