@@ -6,4 +6,4 @@ const DashBlock = ({children}) => {
   )
 }
 
-export default DashBlock
+export default DashBlock;

@@ -40,7 +40,6 @@ const FilesList = ({files}) => {
 }
 
 const DrawerList = ({data})  => {
-  console.log(data)
   const {
     product_name, 
     exw_unit_price_marked_up, 
@@ -55,7 +54,7 @@ const DrawerList = ({data})  => {
   } = data.item
   return (
     <div className={`drawer-list ${data.supplier?.recommended ? 'rec': 'non-rec'}`}>
-      {data.supplier.recommended && <span className='rec-tag'><img src={Star1}/><img src={Star2}/>Cavella Recommended</span>}
+      {data.supplier.recommended && <span className='rec-tag'><img src={Star1}/><img src={Star2}/>Cavela Recommended</span>}
       <List sx={style}>
         <ListItem>
           <span>Status</span>
